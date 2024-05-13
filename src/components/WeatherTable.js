@@ -9,7 +9,7 @@ function WeatherTable({ location }) {
     useEffect(() => {
         if (location) {
             const fetchWeatherData = async () => {
-                const url = `http://localhost:8080/weather?latitude=${location.lat}&longitude=${location.lng}&_=${Date.now()}`;
+                const url = `https://weather-app-zobq.onrender.com/weather?latitude=${location.lat}&longitude=${location.lng}&_=${Date.now()}`;
                 const response = await axios.get(url);
                 console.log(response.data);
                 setWeatherData(Array.isArray(response.data) ? response.data : [response.data]);
